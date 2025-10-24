@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    int a;
+    printf("enter the number");
+    scanf("%d",&a);
+    switch(a)
+    {
+        case(4):
+        printf("the number is 4\n");
+       // break;
+        case(6):
+        printf("the number is 6\n");
+        //break;
+     case(8):
+        printf("the number is 8\n");
+        break;
+     case(5):
+        printf("the number is 5\n");
+        break;
+    
+    
+default:
+    
+printf("the numbers are not 4and 6");
+    }return 0;
+}
