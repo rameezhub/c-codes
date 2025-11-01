@@ -1,0 +1,18 @@
+switch (choice) {
+case 1:
+result = add (num1, num2);
+break;
+case 2:
+result = subtract(numl, num2);
+break;
+case 3:
+result = multiply(numl, num2);
+break;
+case 4:
+result = divide(num1, num2);
+break;
+default:
+printf("Invalid choice! \n");
+return 1;
+}
+printf( "Result: %d\n", result);
