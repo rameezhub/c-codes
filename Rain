@@ -1,0 +1,28 @@
+#include < stdio.h>
+int main () E
+int years, months = 12;
+float rainfall, totalRainfall = 0.0;
+printf( "Enter the number of years: ");
+scanf("%d", &years);
+if (years <= 0) {
+printf("Please enter a valid number of years. \n");
+return 1;
+for (int i = 1; i <= years; i++) {
+printf("Year %d: \n", i);
+for (int j = 1; j <= months; j++) {
+printf("Enter the rainfall for month %d (in inches): ", j);
+scanf("%f", &rainfall);
+if (rainfall < 0) {
+printf( "Rainfall cannot be negative. Please enter a valid value.\n");
+j--;
+continue;
+totalRainfall += rainfall;
+}
+}
+int totalMonths = years * months;
+float averageRainfall = totalMonths › 0 ? totalRainfall / totalMonths : 0;
+// Display results
+printf("\nTotal number of months: %d\n", totalMonths);
+printf("Total inches of rainfall: %.2f\n", totalRainfall);
+printf ("Average rainfall per month: %.2f\n", averageRainfall);
+return 0;
