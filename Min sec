@@ -1,0 +1,17 @@
+#include ‹stdio.h>
+int main() K
+int seconds;
+printf("Enter the number of seconds: ");
+scanf("%d", &seconds);
+if (seconds >= 60) {
+int minutes = seconds / 60;
+printf("%d seconds is equal to %d minutes.\n", seconds, minutes);
+if (seconds >= 3600) {
+int hours = seconds / 3600;
+printf("%d seconds is equal to %d hours. \n", seconds, hours);
+}
+if (seconds >= 86400) {
+int days = seconds / 86400;
+printf("%d seconds is equal to %d days. \n", seconds, days);
+}
+return 0;
