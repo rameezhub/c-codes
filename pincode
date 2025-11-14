@@ -1,0 +1,23 @@
+x#include ‹stdio.h>
+int main () K
+char name[ 100]; char address [200]; int customerId, pincode; float billAmount; char month[10];
+printf("Enter your name: ");
+scanf ("%s", name);
+printf("Enter your address: ");
+scanf("%s"
+, address);
+printf("Enter your customer ID: ");
+scanf ("%d", &customerId);
+printf("Enter your pincode: ");
+scanf("%d"
+", &pincode) ;
+printf"Enter your bill amount: "); scanf("%f", &billAmount) ;
+printf "Enter the month of the bill: "); scanf("%s", month ;
+printf("\n--- Electricity Bill Details ---\n");
+printf ("Name: %s\n", name);
+printf("Address: %s\n", address);
+printf( "Customer ID: %d\n", customerId);
+printf( "Pincode: %d\n", pincode);
+printf("Bill Amount: %F\n", billAmount);
+printf("Month of Bill: %s\n", month);
+return 0;
