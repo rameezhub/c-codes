@@ -1,0 +1,14 @@
+#include<stdio.h>
+int
+main() {
+float base,height;
+printf("enter base");
+scanf("%f", &base);
+
+printf("enter height");
+scanf("%f", &height);
+printf("base pf triangle is %f", 1/2* base *height
+);
+return
+0;
+｝
