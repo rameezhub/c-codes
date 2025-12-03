@@ -1,0 +1,21 @@
+
+#include ‹ stdio.h>
+int main() k
+int c, n, s; int marks [12]; int ID[12];
+for (c = 0; c < 10; c++) 1
+int tot = 0;
+printf("Enter the number of students present in classroom no. %d: ", c + 1)
+scanf ("%d", &n) ;
+if (n › 12) {
+return 1;
+printf("Error: The number of students cannot exceed 12.\n");
+}
+｝
+for (s = 0; s < n; s++) ‹
+printf("Enter the roll number of student %d: "
+, s + 1);
+scanf("%d", &ID[s]);
+printf("Enter the marks of student %d: ", s + 1);
+scanf ("%d", &marks[s]);
+tot += marks [s];
+printf("The total marks of class %d is %d\n", c + 1, tot);
