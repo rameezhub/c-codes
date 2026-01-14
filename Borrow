@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_BOOKS 5
+#define FINE_PER_DAY 5
+#define LOW_STOCK 2
+
+struct Book {
+    int id;
+    char title[30];
+    int total;
+    int available;
+};
+
+struct Borrow {
+    int book_id;
+    char name[20];
+    int due_day;
+    int return_day;
+};
+
+void searchBook(struct Book books[], int n, char key[]) {
+    int found = 0;
+    for (int i = 0; i < n; i++) {
+        if (strstr(books[i].title, key)) {
+            printf("Found: %s (Available: %d)\n",
+                   books[i].title, books[i].available);
+            found = 1;
+        }
+    }
+    if (!found)
+        printf("Book not found\n");
+}
+
+void borrowBook(struct Book books[], int n, int id) {
+    for (int i = 0; i < n; i++) {
+        if (books[i].id == id) {
+            if (books[i].available > 0) {
+                books[i].available--;
+                printf("Book borrowed: %s\n", books[i].title);
+
+                if (books[i].available <= LOW_STOCK)
+                    printf("⚠ Low inventory alert!\n");
+            } else {
+                printf("Book not available\n");
+            }
+            return;
+        }
+    }
+    printf("Invalid Book ID\n");
+}
+
+void returnBook(int due_day, int return_day) {
+    int delay = return_day - due_day;
+    if (delay > 0)
+        printf("Late fine: ₹%d\n", delay * FINE_PER_DAY);
+    else
+        printf("Returned on time. No fine.\n");
+}
+
+int main() {
+    struct Book books[MAX_BOOKS] = {
+        {1, "C Programming", 5, 5},
+        {2, "Data Structures", 3, 3},
+        {3, "Operating Systems", 2, 2}
+    };
+
+    printf("=== Library System ===\n");
+
+    // Search book
+    searchBook(books, 3, "C");
+
+    // Borrow book
+    borrowBook(books, 3, 3);
+    borrowBook(books, 3, 3);   // triggers low stock
+
+    // Return book
+    printf("\nReturning book...\n");
+    returnBook(10, 14); // due day = 10, returned on day = 14
+
+    return 0;
+}
